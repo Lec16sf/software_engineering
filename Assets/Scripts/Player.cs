@@ -48,7 +48,8 @@ public class Player : Character
         Quaternion rotation = transform.rotation;
         rotation.x = 0;
         rotation.y = 0;
-        Instantiate(bulletPrefab, transform.position + new Vector3(0.2f, 1.4f, 1f), transform.rotation);
+        // Instantiate(bulletPrefab, transform.position + new Vector3(0.2f, 1.4f, 1f), transform.rotation);
+        Instantiate(bulletPrefab, transform.position + new Vector3(0.1999995f, 1.2f, 1.091f), transform.rotation);
     }
 
 }
