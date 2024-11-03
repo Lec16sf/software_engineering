@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Bullet : Character
 {
-    public Rigidbody rb;
     public int finalEndurance = 1; 
     public int endurance = 1; //弹药耐久
     public float speed = 20f;

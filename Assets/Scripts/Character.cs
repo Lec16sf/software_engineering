@@ -4,6 +4,7 @@ public class Character : MonoBehaviour
 {
     [Header("属性")]
     [SerializeField]public float health;
+    public Rigidbody rb;
 
     public virtual void Start()
     {
