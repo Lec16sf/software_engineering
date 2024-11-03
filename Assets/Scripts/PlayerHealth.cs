@@ -13,6 +13,6 @@ public class PlayerHealth : MonoBehaviour
 
     void FixedUpdate()
     {
-        healthBarText.text = "Your Health:\n" + character.health.ToString("0");
+        healthBarText.text = "生命\n" + character.health.ToString("0");
     }
 }

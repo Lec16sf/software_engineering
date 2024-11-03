@@ -30,4 +30,9 @@ public class GameManager : MonoBehaviour
     {
         //TODO
     }
+
+    public void getBuff(int index)
+    {
+        //TODO
+    }
 }
