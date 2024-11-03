@@ -1,0 +1,9 @@
+/*
+!.gitignore
+!/Assets/
+!/Packages/
+!/ProjectSettings/
+/Assets/Polaris - Low Poly Ecosystem/
+/Assets/UniStorm 3.0/
+/Assets/Polaris - Low Poly Ecosystem.meta/
+/Assets/UniStorm 3.0.meta/
