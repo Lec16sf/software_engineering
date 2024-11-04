@@ -5,6 +5,7 @@ public class Enemy : Character
     public Canvas canvas;
     public HealthBar healthBar;
     public Chest chest;
+    public Character player;
 
     public override void Start()
     {
@@ -13,8 +14,18 @@ public class Enemy : Character
         {
             canvas = GameObject.FindObjectOfType<Canvas>();
         }
+        player = GameObject.FindObjectOfType<Player>();
         healthBar = Instantiate(healthBar, canvas.transform);
         healthBar.character = this;
+    }
+
+    public override void FixedUpdate()
+    {
+        base.FixedUpdate();
+        if(player.rb.position.z > rb.position.z)
+        {
+            Disappear();
+        }
     }
 
     void OnCollisionEnter(Collision collisionInfo)
@@ -31,24 +42,18 @@ public class Enemy : Character
 
     public override void Die()
     {
-        Destroy(healthBar.gameObject);
-        Destroy(gameObject);
+        Disappear();
         Vector3 chestPos = transform.position + new Vector3(0, -1, 0);
         Instantiate(chest, chestPos, Quaternion.identity);
     }
 
-    void OnBecameVisible()
+    public void Disappear()
     {
-        // 当敌人进入摄像机视野时显示血量条
-        healthBar.gameObject.SetActive(true);
+        if(healthBar != null){
+            Destroy(healthBar.gameObject);
+            healthBar = null;
+        }
+        Destroy(gameObject);
     }
 
-    void OnBecameInvisible()
-    {
-        if (healthBar != null)
-        {
-            // 当敌人离开摄像机视野时隐藏血量条
-            healthBar.gameObject.SetActive(false);
-        }
-    }
 }

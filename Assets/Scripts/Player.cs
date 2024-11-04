@@ -3,7 +3,8 @@ using System.Collections;
 
 public class Player : Character
 {
-    public PlayerMovement movement;
+    public float forwardForce = 500f;
+    public float sidewaysForce = 20f;
     public GameObject bulletPrefab; // 子弹预制件
     public float bulletInterval = 0.5f; // 子弹生成间隔
 
@@ -16,6 +17,15 @@ public class Player : Character
     public override void FixedUpdate()
     {
         base.FixedUpdate();
+        rb.AddForce(0, 0, forwardForce*Time.deltaTime);
+        if (Input.GetKey("d"))
+        {
+            rb.AddForce(sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+        }
+        if (Input.GetKey("a"))
+        {
+            rb.AddForce(-sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+        }
     }
 
     void OnCollisionEnter(Collision collisionInfo)
@@ -28,7 +38,7 @@ public class Player : Character
 
     public override void Die()
     {
-        movement.enabled = false;
+        forwardForce = 0;
         FindObjectOfType<GameManager>().EndGame();
     }
 

@@ -147,6 +147,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
+  rb: {fileID: 1393001473111275715}
   canvas: {fileID: 0}
   healthBar: {fileID: 234859736746339065, guid: 8ae4bc739c83eee42a2ea5fd61888ff4, type: 3}
   chest: {fileID: 3386173762006756977, guid: 5dcae5adf53292945adef517afe8041e, type: 3}
+  player: {fileID: 0}
