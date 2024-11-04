@@ -11,7 +11,7 @@ public class Player : Character
     public override void Start()
     {
         base.Start();
-        StartCoroutine(ShootBullets());
+        // StartCoroutine(ShootBullets());
     }
 
     public override void FixedUpdate()
@@ -43,23 +43,23 @@ public class Player : Character
     }
 
     // 协程定时生成子弹
-    IEnumerator ShootBullets()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(bulletInterval);
-            Shoot();
-        }
-    }
+    // IEnumerator ShootBullets()
+    // {
+    //     while (true)
+    //     {
+    //         yield return new WaitForSeconds(bulletInterval);
+    //         Shoot();
+    //     }
+    // }
 
-    // 生成子弹的方法
-    void Shoot()
-    {
-        Quaternion rotation = transform.rotation;
-        rotation.x = 0;
-        rotation.y = 0;
-        // Instantiate(bulletPrefab, transform.position + new Vector3(0.2f, 1.4f, 1f), transform.rotation);
-        Instantiate(bulletPrefab, transform.position + new Vector3(0.1999995f, 1.2f, 1.091f), transform.rotation);
-    }
+    // // 生成子弹的方法
+    // void Shoot()
+    // {
+    //     Quaternion rotation = transform.rotation;
+    //     rotation.x = 0;
+    //     rotation.y = 0;
+    //     // Instantiate(bulletPrefab, transform.position + new Vector3(0.2f, 1.4f, 1f), transform.rotation);
+    //     Instantiate(bulletPrefab, transform.position + new Vector3(0.1999995f, 1.2f, 1.091f), transform.rotation);
+    // }
 
 }
