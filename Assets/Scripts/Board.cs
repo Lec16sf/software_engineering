@@ -9,7 +9,6 @@ public class Board : MonoBehaviour
     public float textSize = 1f;
     public GameManager gameManager;
     public Player player;
-    public Rigidbody rb;
     
     void Start()
     {
@@ -22,7 +21,7 @@ public class Board : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(player.rb.position.z > rb.position.z)
+        if(player.transform.position.z > transform.position.z)
         {
             Destroy(gameObject);
         }
@@ -34,6 +33,7 @@ public class Board : MonoBehaviour
         {
             Destroy(gameObject);
             gameManager.getBuff(BuffIndex);
+            Debug.Log("getbuff"+BuffIndex);
         }
     }
 }

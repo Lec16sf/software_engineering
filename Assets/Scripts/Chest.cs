@@ -12,10 +12,12 @@ public class Chest : MonoBehaviour
     // Start is called before the first frame update
     void OnTriggerEnter(Collider other)
     {
+        Debug.Log("OnTriggerEnter");
         if (other.CompareTag("Player"))
         {
             Destroy(gameObject);
             gameManager.getBuff();
+            Debug.Log("getbuff");
         }
     }
 }
