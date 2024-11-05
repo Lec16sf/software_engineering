@@ -1703,7 +1703,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!95 &1367280927614214466
 Animator:
@@ -1715,7 +1715,7 @@ Animator:
   m_GameObject: {fileID: 4705959546900231405}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 279e9f3fcedd1cb48a1a6e243f4f442c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1800c6da317689b4abde5a57e2058ec5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1744,6 +1744,7 @@ MonoBehaviour:
   sidewaysForce: 20
   bulletPrefab: {fileID: 4697780555387755104, guid: 89cf3ca4eec739447b9c494f5f529498, type: 3}
   bulletInterval: 0.5
+  animator: {fileID: 1367280927614214466}
 --- !u!1 &4826960661858930774
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,7 +14,8 @@ public class Board : MonoBehaviour
     {
         player = GameObject.FindObjectOfType<Player>();
         gameManager = GameObject.FindObjectOfType<GameManager>();
-        text.text = "测试测hi是爱上帝阿萨测试策划一二一但是"+BuffIndex.ToString();
+        BuffIndex = gameManager.getBuffNum();
+        text.text = GameManager.BuffText[BuffIndex];
         text.color = textColor;
         text.fontSize = textSize;
     }

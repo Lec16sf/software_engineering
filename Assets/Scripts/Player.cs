@@ -7,6 +7,7 @@ public class Player : Character
     public float sidewaysForce = 20f;
     public GameObject bulletPrefab; // 子弹预制件
     public float bulletInterval = 0.5f; // 子弹生成间隔
+    public Animator animator;
 
     public override void Start()
     {
@@ -26,6 +27,7 @@ public class Player : Character
         {
             rb.AddForce(-sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
+        animator.SetFloat("health", health);
     }
 
     void OnCollisionEnter(Collision collisionInfo)
