@@ -2,26 +2,47 @@ using UnityEngine;
 
 public class Bullet : Character
 {
+    public int damage;
     public int finalEndurance = 1; 
-    public int endurance = 1; //弹药耐久
+    public int endurance = 1;
     public float speed = 20f;
     public float lifetime = 5f;
-    // 运动方向的向量
-    public Vector3 direction;
+    public float criticalHitRate = 0;
+    public float criticalHitEnhanceRate = 0;
+    public float damageEnhanceRate = 0;
+    public float vampireRate = 0;
+
+    public Gameobject manager;
+    public GameManager gameManager;
+    public Player player;
 
     public override void Start()
     {
         endurance = finalEndurance;
         Destroy(gameObject, lifetime);
+
+        manager = GameObject.FindObjectOfType<Player>();
+        gameManager = manager.GetComponent<GameManager>();
+
+        player = GameObject.FindObjectOfType<Player>().GetComponent<Player>();
     }
 
     public override void FixedUpdate()
     {
-        // 沿着运动方向施加力
-        // rb.AddForce(direction * speed * Time.deltaTime, ForceMode.VelocityChange);
-        //使得子弹沿着子弹方向运动
         rb.velocity = transform.forward * speed;
-        // rb.AddForce(0, 0, speed*Time.deltaTime, ForceMode.VelocityChange);
+        damage = gameManager.damage;
+        endurance = gameManager.endurance;
+        speed = gameManager.speed;
+        criticalHitRate = gameManager.criticalHitRate;
+        criticalHitEnhanceRate = gameManager.criticalHitEnhanceRate;
+        damageEnhanceRate = gameManager.damageEnhanceRate;
+        vampireRate = gameManager.vampireRate;
+
+        health = damage * damageEnhanceRate;
+        if(Random.value < criticalHitRate)
+        {
+            health *= criticalHitEnhanceRate;
+        }
     }
 
     void OnCollisionEnter(Collision collision)
@@ -29,6 +50,7 @@ public class Bullet : Character
         if(collision.collider.tag == "Enemy")
         {
             endurance--;
+            player.health += health * vampireRate;
             if(endurance <= 0)
             {
                 Die();

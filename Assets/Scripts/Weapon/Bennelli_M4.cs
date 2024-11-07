@@ -6,6 +6,8 @@ namespace Weapon
 {
     public class Bennelli_M4: Weapon
     {
+        damage = 15f;
+        bulletInterval = 0.5f;
 
         IEnumerator ShootBullets()
         {
@@ -18,34 +20,40 @@ namespace Weapon
         
         public override void Shoot()
         {
-            Quaternion rotation = transform.rotation;
-            rotation.x = 0;
-            rotation.y = 0;
-            // 指定子弹的运动方向
-            GameObject bullet1 = Instantiate(bulletPrefab, transform.position + new Vector3(0f, 0f, 1.091f), transform.rotation* Quaternion.Euler(0f, 180f, 0f));
+            Instantiate(bulletPrefab, transform.position + new Vector3(0f, 0f, 3.791f), rotation * Quaternion.Euler(0f, 0f, 0f));
 
-            GameObject bullet2 = Instantiate(bulletPrefab, transform.position + new Vector3(0f, 0f, 1.091f), transform.rotation * Quaternion.Euler(0f, 150f, 0f));
+            if(bulletNum >= 3)
+            {
+                Instantiate(bulletPrefab, transform.position + new Vector3(0.25f, 0f, 3.791f), rotation * Quaternion.Euler(0f, 7.5f, 0f));
 
-            // GameObject bullet3 = Instantiate(bulletPrefab, transform.position + new Vector3(0f, 0f, 1.091f), transform.rotation * Quaternion.Euler(0f, 30f, 0f));
-            // bullet3.GetComponent<Bullet>().direction = new Vector3(0f, 30f, 0f);
+                Instantiate(bulletPrefab, transform.position + new Vector3(-0.25f, 0f, 3.791f), rotation * Quaternion.Euler(0f, -7.5f, 0f));
+            }
 
-            // GameObject bullet4 = Instantiate(bulletPrefab, transform.position + new Vector3(0f, 0f, 1.091f), transform.rotation * Quaternion.Euler(0f, 60f, 0f));
-            // bullet4.GetComponent<Bullet>().direction = new Vector3(0f, 60f, 0f);
+            if(bulletNum >= 5)
+            {
+                Instantiate(bulletPrefab, transform.position + new Vector3(1f, 0f, 3.791f), rotation * Quaternion.Euler(0f, 30f, 0f));
 
-            // GameObject bullet5 = Instantiate(bulletPrefab, transform.position + new Vector3(0f, 0f, 1.091f), transform.rotation * Quaternion.Euler(0f, -60f, 0f));
-            // bullet5.GetComponent<Bullet>().direction = new Vector3(0f, -60f, 0f);
+                Instantiate(bulletPrefab, transform.position + new Vector3(-1f, 0f, 3.791f), rotation * Quaternion.Euler(0f, -30f, 0f));
+            }
+
+            if(bulletNum >= 7)
+            {
+                Instantiate(bulletPrefab, transform.position + new Vector3(0.5f, 0f, 3.791f), rotation * Quaternion.Euler(0f, 15f, 0f));
+
+                Instantiate(bulletPrefab, transform.position + new Vector3(-0.5f, 0f, 3.791f), rotation * Quaternion.Euler(0f, -15f, 0f));
+            }
         }
         // Start is called before the first frame update
         public override void Start()
         {
             base.Start();
-            bulletInterval = 0.4f;
         }
 
         // Update is called once per frame
-        public override void Update()
+        public override void FixedUpdate()
         {
-            base.Update();
+            base.FixedUpdate();
+            bulletInterval = bulletIntervalBase * bulletIntervalReduceRate;
         }
     }
 }
