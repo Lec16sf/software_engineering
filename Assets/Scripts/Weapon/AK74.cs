@@ -6,11 +6,14 @@ namespace Weapon
 {
     public class AK47: Weapon
     {
-        damage = 25f;
-        bulletInterval = 0.3f;
-        IEnumerator ShootBullets()
+        public override IEnumerator ShootBullets()
         {
-            while (true)
+            if (player == null)
+            {
+                player = GameObject.FindObjectOfType<Player>();
+            }
+            Debug.Log(bulletInterval);
+            while (player.health > 0)
             {
                 yield return new WaitForSeconds(bulletInterval);
                 Shoot();
@@ -24,6 +27,8 @@ namespace Weapon
         
         public override void Start()
         {
+            bulletInterval = 0.3f;
+            bulletIntervalBase = bulletInterval;
             base.Start();
         }
 

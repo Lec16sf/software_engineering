@@ -6,12 +6,13 @@ namespace Weapon
 {
     public class Bennelli_M4: Weapon
     {
-        damage = 15f;
-        bulletInterval = 0.5f;
-
-        IEnumerator ShootBullets()
+        public override IEnumerator ShootBullets()
         {
-            while (true)
+            if (player == null)
+            {
+                player = GameObject.FindObjectOfType<Player>();
+            }
+            while (player.health > 0)
             {
                 yield return new WaitForSeconds(bulletInterval);
                 Shoot();
@@ -46,6 +47,8 @@ namespace Weapon
         // Start is called before the first frame update
         public override void Start()
         {
+            bulletInterval = 0.5f;
+            bulletIntervalBase = bulletInterval;
             base.Start();
         }
 

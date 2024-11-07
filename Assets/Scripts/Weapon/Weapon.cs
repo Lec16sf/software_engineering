@@ -7,18 +7,16 @@ namespace Weapon
     {
         public float bulletIntervalBase = 0.4f;
         public float bulletInterval = 0.4f;
-        public float damage = 25f;
         public int bulletNum = 1;
         public float bulletIntervalReduceRate = 0;
         public Quaternion rotation = Quaternion.identity;
         public GameObject bulletPrefab;
         public Coroutine shootingCoroutine = null;
 
-        public GameObject manager;
         public GameManager gameManager;
-        public player player;
+        public Player player;
 
-        IEnumerator ShootBullets()
+        public virtual IEnumerator ShootBullets()
         {
             while (player.health > 0)
             {
@@ -34,16 +32,15 @@ namespace Weapon
 
         public virtual void Start()
         {
-            manager = GameObject.FindObjectOfType<Player>();
-            gameManager = manager.GetComponent<GameManager>();
-            player = GameObject.FindObjectOfType<Player>().GetComponent<Player>();
-            gameManager.damage = damage;
+            gameManager  = GameObject.FindObjectOfType<GameManager>();
+            player = GameObject.FindObjectOfType<Player>();
             bulletNum = gameManager.bulletNum;
             bulletIntervalReduceRate = gameManager.bulletIntervalReduceRate;
-            if (shootingCoroutine == null)
+            if (shootingCoroutine != null)
             {
-                shootingCoroutine = StartCoroutine(ShootBullets());
+                StopCoroutine(shootingCoroutine);
             }
+            shootingCoroutine = StartCoroutine(ShootBullets());
         }
 
         // Update is called once per frame

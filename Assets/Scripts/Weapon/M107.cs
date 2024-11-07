@@ -6,12 +6,14 @@ namespace Weapon
 {
     public class M107: Weapon
     {
-        damage = 100f;
-        bulletInterval = 0.7f;
         
-        IEnumerator ShootBullets()
+        public override IEnumerator ShootBullets()
         {
-            while (true)
+            if (player == null)
+            {
+                player = GameObject.FindObjectOfType<Player>();
+            }
+            while (player.health > 0)
             {
                 yield return new WaitForSeconds(bulletInterval);
                 Shoot();
@@ -25,6 +27,8 @@ namespace Weapon
         // Start is called before the first frame update
         public override void Start()
         {
+            bulletInterval = 0.7f;
+            bulletIntervalBase = bulletInterval;
             base.Start();
         }
 

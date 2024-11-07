@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Bullet : Character
 {
-    public int damage;
+    public float damage;
     public int finalEndurance = 1; 
     public int endurance = 1;
     public float speed = 20f;
@@ -12,7 +12,6 @@ public class Bullet : Character
     public float damageEnhanceRate = 0;
     public float vampireRate = 0;
 
-    public Gameobject manager;
     public GameManager gameManager;
     public Player player;
 
@@ -21,10 +20,9 @@ public class Bullet : Character
         endurance = finalEndurance;
         Destroy(gameObject, lifetime);
 
-        manager = GameObject.FindObjectOfType<Player>();
-        gameManager = manager.GetComponent<GameManager>();
+        gameManager = GameObject.FindObjectOfType<GameManager>();
 
-        player = GameObject.FindObjectOfType<Player>().GetComponent<Player>();
+        player = GameObject.FindObjectOfType<Player>();
     }
 
     public override void FixedUpdate()
