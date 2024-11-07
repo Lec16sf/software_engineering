@@ -27,6 +27,7 @@ namespace Weapon
         public override void Start()
         {
             bulletInterval = 0.15f;
+            damage = 20f;
             bulletIntervalBase = bulletInterval;
             base.Start();
         }

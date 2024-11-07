@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Bullet : Character
 {
-    public float damage;
+    public float damage = 25f;
     public int finalEndurance = 1; 
     public int endurance = 1;
     public float speed = 20f;
@@ -23,6 +23,20 @@ public class Bullet : Character
         gameManager = GameObject.FindObjectOfType<GameManager>();
 
         player = GameObject.FindObjectOfType<Player>();
+
+        damage = gameManager.damage;
+        endurance = gameManager.endurance;
+        speed = gameManager.speed;
+        criticalHitRate = gameManager.criticalHitRate;
+        criticalHitEnhanceRate = gameManager.criticalHitEnhanceRate;
+        damageEnhanceRate = gameManager.damageEnhanceRate;
+        vampireRate = gameManager.vampireRate;
+
+        health = damage * damageEnhanceRate;
+        if(Random.value < criticalHitRate)
+        {
+            health *= criticalHitEnhanceRate;
+        }
     }
 
     public override void FixedUpdate()
@@ -41,6 +55,7 @@ public class Bullet : Character
         {
             health *= criticalHitEnhanceRate;
         }
+        // Debug.Log(health);
     }
 
     void OnCollisionEnter(Collision collision)
@@ -49,6 +64,7 @@ public class Bullet : Character
         {
             endurance--;
             player.health += health * vampireRate;
+            // Debug.Log(damage);
             if(endurance <= 0)
             {
                 Die();

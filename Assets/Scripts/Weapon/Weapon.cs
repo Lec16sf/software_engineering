@@ -8,6 +8,7 @@ namespace Weapon
         public float bulletIntervalBase = 0.4f;
         public float bulletInterval = 0.4f;
         public int bulletNum = 1;
+        public float damage = 25f;
         public float bulletIntervalReduceRate = 0;
         public Quaternion rotation = Quaternion.identity;
         public GameObject bulletPrefab;
@@ -35,6 +36,7 @@ namespace Weapon
             gameManager  = GameObject.FindObjectOfType<GameManager>();
             player = GameObject.FindObjectOfType<Player>();
             bulletNum = gameManager.bulletNum;
+            gameManager.damage = damage;
             bulletIntervalReduceRate = gameManager.bulletIntervalReduceRate;
             if (shootingCoroutine != null)
             {
@@ -50,6 +52,17 @@ namespace Weapon
         }
         public void OnEnable()
         {
+            if (player == null)
+            {
+                player = GameObject.FindObjectOfType<Player>();
+            }
+            if (gameManager == null)
+            {
+                gameManager = GameObject.FindObjectOfType<GameManager>();
+            }
+            bulletNum = gameManager.bulletNum;
+            gameManager.damage = damage;
+            bulletIntervalReduceRate = gameManager.bulletIntervalReduceRate;
             if (shootingCoroutine == null)
             {
                 shootingCoroutine = StartCoroutine(ShootBullets());

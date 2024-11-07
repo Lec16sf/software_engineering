@@ -161,7 +161,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 52
@@ -180,11 +180,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 25
   rb: {fileID: 7241172482531147265}
+  damage: 0
   finalEndurance: 1
   endurance: 1
   speed: 20
   lifetime: 2
-  direction: {x: 0, y: 0, z: 0}
+  criticalHitRate: 0
+  criticalHitEnhanceRate: 0
+  damageEnhanceRate: 0
+  vampireRate: 0
+  gameManager: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1001 &5612450163594236751
 PrefabInstance:
   m_ObjectHideFlags: 0

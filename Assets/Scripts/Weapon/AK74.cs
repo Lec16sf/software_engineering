@@ -12,7 +12,7 @@ namespace Weapon
             {
                 player = GameObject.FindObjectOfType<Player>();
             }
-            Debug.Log(bulletInterval);
+            // Debug.Log(bulletInterval);
             while (player.health > 0)
             {
                 yield return new WaitForSeconds(bulletInterval);
@@ -28,6 +28,7 @@ namespace Weapon
         public override void Start()
         {
             bulletInterval = 0.3f;
+            damage = 25f;
             bulletIntervalBase = bulletInterval;
             base.Start();
         }

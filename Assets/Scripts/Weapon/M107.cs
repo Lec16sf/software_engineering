@@ -22,12 +22,13 @@ namespace Weapon
         
         public override void Shoot()
         {
-            Instantiate(bulletPrefab, transform.position + new Vector3(0f, 0f, 10.791f), rotation * Quaternion.Euler(0f, 0f, 0f));
+            Instantiate(bulletPrefab, transform.position + new Vector3(0f, 0f, 1.791f), rotation * Quaternion.Euler(0f, 0f, 0f));
         }
         // Start is called before the first frame update
         public override void Start()
         {
             bulletInterval = 0.7f;
+            damage = 100f;
             bulletIntervalBase = bulletInterval;
             base.Start();
         }
