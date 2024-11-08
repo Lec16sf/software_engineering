@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4704367706783065523}
   - component: {fileID: 6290801513970828664}
   - component: {fileID: 1429539540262855511}
+  - component: {fileID: 4360439313928207405}
   m_Layer: 0
   m_Name: Bennelli_M4
   m_TagString: Untagged
@@ -85,6 +86,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4360439313928207405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67001545165998059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6890863925a77e641bbf033d14ae68bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletIntervalBase: 0.4
+  bulletInterval: 0.4
+  bulletNum: 1
+  damage: 25
+  bulletIntervalReduceRate: 0
+  rotation: {x: 0, y: 0, z: 0, w: 1}
+  bulletPrefab: {fileID: 7888615130795731134, guid: c9966e3554ae98942a80dcc3906b5d20, type: 3}
+  gameManager: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &180968978935759347
 GameObject:
   m_ObjectHideFlags: 0
@@ -2213,6 +2235,7 @@ GameObject:
   - component: {fileID: 695153963011776402}
   - component: {fileID: 5622857390602230385}
   - component: {fileID: 5328086525819307476}
+  - component: {fileID: 5596553425331316124}
   m_Layer: 0
   m_Name: M4_8
   m_TagString: Untagged
@@ -2290,6 +2313,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5596553425331316124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5906262182653725048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5968ab05714c728419bf934feee9e835, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletIntervalBase: 0.4
+  bulletInterval: 0.4
+  bulletNum: 1
+  damage: 25
+  bulletIntervalReduceRate: 0
+  rotation: {x: 0, y: 0, z: 0, w: 1}
+  bulletPrefab: {fileID: 7888615130795731134, guid: c9966e3554ae98942a80dcc3906b5d20, type: 3}
+  gameManager: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &5949961705114011123
 GameObject:
   m_ObjectHideFlags: 0
@@ -2364,6 +2408,7 @@ GameObject:
   - component: {fileID: 5349382678354229766}
   - component: {fileID: 8011541835134146310}
   - component: {fileID: 1068414184896114844}
+  - component: {fileID: 3125128258858882412}
   m_Layer: 0
   m_Name: AK74
   m_TagString: Untagged
@@ -2439,6 +2484,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3125128258858882412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6017725274166457772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e476b6849ccfaf440ad14521eb66a009, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletIntervalBase: 0.4
+  bulletInterval: 0.4
+  bulletNum: 1
+  damage: 25
+  bulletIntervalReduceRate: 0
+  rotation: {x: 0, y: 0, z: 0, w: 1}
+  bulletPrefab: {fileID: 7888615130795731134, guid: c9966e3554ae98942a80dcc3906b5d20, type: 3}
+  gameManager: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &6034674028698659245
 GameObject:
   m_ObjectHideFlags: 0
@@ -2640,6 +2706,7 @@ GameObject:
   - component: {fileID: 1692047964898184655}
   - component: {fileID: 8103148142413759926}
   - component: {fileID: 5990865972826519746}
+  - component: {fileID: 7230820878379415093}
   m_Layer: 0
   m_Name: M107
   m_TagString: Untagged
@@ -2715,6 +2782,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7230820878379415093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6524885470574406510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6a0c5da957f3f94db72175600fd9f3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletIntervalBase: 0.4
+  bulletInterval: 0.4
+  bulletNum: 1
+  damage: 25
+  bulletIntervalReduceRate: 0
+  rotation: {x: 0, y: 0, z: 0, w: 1}
+  bulletPrefab: {fileID: 3911352728811700513, guid: 57aebaec4bd1b7440a22ff9e8d177daa, type: 3}
+  gameManager: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &6548065369075679487
 GameObject:
   m_ObjectHideFlags: 0
@@ -3034,6 +3122,7 @@ GameObject:
   - component: {fileID: 3472418876881043069}
   - component: {fileID: 3956460932628485802}
   - component: {fileID: 4402322560306715075}
+  - component: {fileID: 6405590638765004474}
   m_Layer: 0
   m_Name: M249
   m_TagString: Untagged
@@ -3110,6 +3199,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6405590638765004474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7182890894197119941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d554863677946d34bb08de3d2ec6d283, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletIntervalBase: 0.4
+  bulletInterval: 0.4
+  bulletNum: 1
+  damage: 25
+  bulletIntervalReduceRate: 0
+  rotation: {x: 0, y: 0, z: 0, w: 1}
+  bulletPrefab: {fileID: 7888615130795731134, guid: c9966e3554ae98942a80dcc3906b5d20, type: 3}
+  gameManager: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &7223108928639076674
 GameObject:
   m_ObjectHideFlags: 0
