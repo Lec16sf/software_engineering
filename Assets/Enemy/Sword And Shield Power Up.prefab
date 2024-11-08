@@ -1,0 +1,167 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1171524185105049316
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 0df8495f354d24245a1662285b0906e4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.3545742
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0df8495f354d24245a1662285b0906e4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.50000024
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0df8495f354d24245a1662285b0906e4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 13.414633
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0df8495f354d24245a1662285b0906e4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0df8495f354d24245a1662285b0906e4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0df8495f354d24245a1662285b0906e4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0df8495f354d24245a1662285b0906e4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0df8495f354d24245a1662285b0906e4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0df8495f354d24245a1662285b0906e4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0df8495f354d24245a1662285b0906e4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0df8495f354d24245a1662285b0906e4, type: 3}
+      propertyPath: m_Name
+      value: Sword And Shield Power Up
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0df8495f354d24245a1662285b0906e4, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0df8495f354d24245a1662285b0906e4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 513522298919657934}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0df8495f354d24245a1662285b0906e4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1069029125436753460}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0df8495f354d24245a1662285b0906e4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6394652289239565288}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0df8495f354d24245a1662285b0906e4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5986786523476836143}
+  m_SourcePrefab: {fileID: 100100000, guid: 0df8495f354d24245a1662285b0906e4, type: 3}
+--- !u!1 &2054625338217601973 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0df8495f354d24245a1662285b0906e4, type: 3}
+  m_PrefabInstance: {fileID: 1171524185105049316}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &513522298919657934
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054625338217601973}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 67a8e655090ac744ea3b5bfe6d1bea20, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &1069029125436753460
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054625338217601973}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!54 &6394652289239565288
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054625338217601973}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &5986786523476836143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054625338217601973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d76afbc59a9dde34f991ca709fd8a8ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  rb: {fileID: 6394652289239565288}
+  canvas: {fileID: 0}
+  healthBar: {fileID: 234859736746339065, guid: 8ae4bc739c83eee42a2ea5fd61888ff4, type: 3}
+  chest: {fileID: 3386173762006756977, guid: 5dcae5adf53292945adef517afe8041e, type: 3}
+  player: {fileID: 0}

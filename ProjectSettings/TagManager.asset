@@ -8,7 +8,7 @@ TagManager:
   - Bullet
   - Chest
   - Ground
-  - Fire
+  - GameManager
   layers:
   - Default
   - TransparentFX

@@ -17,6 +17,7 @@ public class Enemy : Character
         player = GameObject.FindObjectOfType<Player>();
         healthBar = Instantiate(healthBar, canvas.transform);
         healthBar.character = this;
+        rb.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
     }
 
     public override void FixedUpdate()

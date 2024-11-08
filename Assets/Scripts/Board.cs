@@ -9,20 +9,20 @@ public class Board : MonoBehaviour
     public float textSize = 1f;
     public GameManager gameManager;
     public Player player;
-    public Rigidbody rb;
     
     void Start()
     {
         player = GameObject.FindObjectOfType<Player>();
         gameManager = GameObject.FindObjectOfType<GameManager>();
-        text.text = "测试测hi是爱上帝阿萨测试策划一二一但是"+BuffIndex.ToString();
+        BuffIndex = gameManager.getBuffNum();
+        text.text = GameManager.BuffText[BuffIndex];
         text.color = textColor;
         text.fontSize = textSize;
     }
 
     void FixedUpdate()
     {
-        if(player.rb.position.z > rb.position.z)
+        if(player.transform.position.z > transform.position.z)
         {
             Destroy(gameObject);
         }
@@ -34,6 +34,7 @@ public class Board : MonoBehaviour
         {
             Destroy(gameObject);
             gameManager.getBuff(BuffIndex);
+            Debug.Log("getbuff"+BuffIndex);
         }
     }
 }

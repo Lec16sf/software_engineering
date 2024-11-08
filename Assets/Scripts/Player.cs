@@ -7,6 +7,7 @@ public class Player : Character
     public float sidewaysForce = 20f;
     public GameObject bulletPrefab; // 子弹预制件
     public float bulletInterval = 0.5f; // 子弹生成间隔
+    public Animator animator;
 
     public override void Start()
     {
@@ -26,6 +27,7 @@ public class Player : Character
         {
             rb.AddForce(-sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
+        animator.SetFloat("health", health);
     }
 
     void OnCollisionEnter(Collision collisionInfo)
@@ -40,6 +42,18 @@ public class Player : Character
     {
         forwardForce = 0;
         FindObjectOfType<GameManager>().EndGame();
+    }
+
+    void OnTriggerEnter(Collider collisionInfo)
+    {
+        if (collisionInfo.CompareTag("Fire"))
+        {
+            Fire fire = collisionInfo.GetComponent<Fire>();
+            if (fire != null)
+            {
+                this.ChangeHealth(fire.health);
+            }
+        }
     }
 
     // 协程定时生成子弹
@@ -61,5 +75,6 @@ public class Player : Character
     //     // Instantiate(bulletPrefab, transform.position + new Vector3(0.2f, 1.4f, 1f), transform.rotation);
     //     Instantiate(bulletPrefab, transform.position + new Vector3(0.1999995f, 1.2f, 1.091f), transform.rotation);
     // }
+
 
 }
