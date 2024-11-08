@@ -71,4 +71,19 @@ public class Bullet : Character
             }
         }
     }
+
+    void OnTriggerEnter(Collider collisionInfo)
+    {
+        if (collisionInfo.CompareTag("Enemy"))
+        {
+            endurance--;
+            player.health += health * vampireRate;
+            // Debug.Log(damage);
+            if(endurance <= 0)
+            {
+                Die();
+            }
+            Debug.Log(this.health);
+        }
+    }
 }

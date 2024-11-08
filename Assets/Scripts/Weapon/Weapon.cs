@@ -48,7 +48,7 @@ namespace Weapon
         // Update is called once per frame
         public virtual void FixedUpdate()
         {
-            
+            gameManager.damage = damage;
         }
         public void OnEnable()
         {

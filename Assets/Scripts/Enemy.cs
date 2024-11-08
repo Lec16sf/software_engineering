@@ -40,6 +40,26 @@ public class Enemy : Character
         }
     }
 
+    void OnTriggerEnter(Collider collisionInfo)
+    {
+        if (collisionInfo.CompareTag("Player"))
+        {
+            Player player = collisionInfo.GetComponent<Player>();
+            if (player != null)
+            {
+                this.ChangeHealth(player.health);
+            }
+        }
+        else if (collisionInfo.CompareTag("Bullet"))
+        {
+            Bullet bullet = collisionInfo.GetComponent<Bullet>();
+            if (bullet != null)
+            {
+                this.ChangeHealth(bullet.health);
+            }
+        }
+    }
+
     public override void Die()
     {
         Disappear();
