@@ -68,7 +68,6 @@ namespace Weapon
                             yield return new WaitForSeconds(0.5f);
                         }
                         break;
-                        break;
                     case 6:
                         times = Random.Range(3, 7);
                         for (int i = 0; i < times; i++)

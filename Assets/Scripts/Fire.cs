@@ -42,7 +42,6 @@ public class Fire : Character
             {
                 Die();
             }
-            Debug.Log("Fire "+this.health);
         }
     }
 }

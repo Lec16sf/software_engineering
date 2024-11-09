@@ -7,6 +7,9 @@ public class Enemy : Character
     public Chest chest;
     public Character player;
     public Vector3 HealthBaroffset = new Vector3(0, 1.5f, 0);
+    public Renderer[] renderers;
+    public Collider[] colliders;
+    public float activationDistance = 20f;
 
     public override void Start()
     {
@@ -20,11 +23,35 @@ public class Enemy : Character
         healthBar.character = this;
         healthBar.offset = HealthBaroffset;
         rb.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
+        renderers = GetComponentsInChildren<Renderer>();
+        foreach (Renderer rend in renderers)
+        {
+            rend.enabled = false;
+        }
+        colliders = GetComponentsInChildren<Collider>();
+        foreach (Collider col in colliders)
+        {
+            col.enabled = false;
+        }
+        healthBar.gameObject.SetActive(false);
     }
 
     public override void FixedUpdate()
     {
         base.FixedUpdate();
+        if(rb.position.z < player.rb.position.z+activationDistance)
+        {
+            foreach (Renderer rend in renderers)
+            {
+                rend.enabled = true;
+            }
+            foreach (Collider col in colliders)
+            {
+                col.enabled = true;
+            }
+            this.gameObject.SetActive(true);
+            healthBar.gameObject.SetActive(true);
+        }
         if(player.rb.position.z > rb.position.z)
         {
             Disappear();
@@ -65,7 +92,6 @@ public class Enemy : Character
 
     public override void Die()
     {
-        Debug.Log("EnemyDie");
         Disappear();
         Vector3 chestPos = transform.position + new Vector3(0, 0, 0);
         Instantiate(chest, chestPos, Quaternion.identity);
