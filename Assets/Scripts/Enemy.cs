@@ -49,7 +49,6 @@ public class Enemy : Character
             {
                 col.enabled = true;
             }
-            this.gameObject.SetActive(true);
             healthBar.gameObject.SetActive(true);
         }
         if(player.rb.position.z > rb.position.z)

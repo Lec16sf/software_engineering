@@ -9,23 +9,27 @@ namespace Weapon
         public float bulletInterval = 0.4f;
         public float damage = 25f;
         public int bulletNum = 1;
+        public float activationDistance = 20f;
+        public bool isShooting = false;
         public GameObject firePrefab;
         public GameObject bulletPrefab;
         public Coroutine shootingCoroutine = null;
         public Quaternion rotation = Quaternion.identity;
         private Enemy robot;
+        public Player player;
+        public Rigidbody rb;
         public IEnumerator ShootBullets()
         {
             if (robot == null)
             {
                 robot = GetComponentInParent<Enemy>();
             }
-            // Debug.Log(bulletInterval);
             while (robot.health > 0)
             {
                 yield return new WaitForSeconds(2f);
                 int shootMethod = Random.Range(1, 7);
                 int times;
+                Debug.Log("shootMethod: " + shootMethod);
                 switch (shootMethod)
                 {
                     case 1:
@@ -161,12 +165,25 @@ namespace Weapon
         public void Start()
         {
             robot = GetComponentInParent<Enemy>();
-            // Debug.Log(robot == null);
-            if (shootingCoroutine != null)
+            player = GameObject.FindObjectOfType<Player>();
+        }
+
+        public void FixedUpdate()
+        {
+            if(rb.position.z < player.rb.position.z+activationDistance && isShooting == false)
             {
-                StopCoroutine(shootingCoroutine);
+                Debug.Log("start shooting");
+                shootingCoroutine = StartCoroutine(ShootBullets());
+                isShooting = true;
             }
-            shootingCoroutine = StartCoroutine(ShootBullets());
+            if(player.rb.position.z > rb.position.z && isShooting == true)
+            {
+                if (shootingCoroutine != null)
+                {
+                    StopCoroutine(shootingCoroutine);
+                    shootingCoroutine = null;
+                }
+            }
         }
     }
 }
