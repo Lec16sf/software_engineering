@@ -825,6 +825,7 @@ GameObject:
   - component: {fileID: 4297112545639873936}
   - component: {fileID: 7005770656174935657}
   - component: {fileID: 282513784084978842}
+  - component: {fileID: 6548477880210202724}
   m_Layer: 0
   m_Name: mech
   m_TagString: BOSS
@@ -841,7 +842,7 @@ Transform:
   m_GameObject: {fileID: 3968171070736913509}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0.5, z: 30.3}
+  m_LocalPosition: {x: 0, y: 0.5, z: 44.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -931,13 +932,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d76afbc59a9dde34f991ca709fd8a8ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1000
+  health: 100
   rb: {fileID: 7005770656174935657}
   canvas: {fileID: 0}
   healthBar: {fileID: 234859736746339065, guid: 8ae4bc739c83eee42a2ea5fd61888ff4, type: 3}
   chest: {fileID: 3386173762006756977, guid: 5dcae5adf53292945adef517afe8041e, type: 3}
   player: {fileID: 0}
   HealthBaroffset: {x: 0, y: 7, z: 0}
+  renderers: []
+  colliders: []
+  activationDistance: 20
+--- !u!23 &6548477880210202724
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3968171070736913509}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &4006048593247326272
 GameObject:
   m_ObjectHideFlags: 0
@@ -1105,6 +1151,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7454262417450751582}
+  - component: {fileID: 1380699196663020155}
   - component: {fileID: 3445459988394987967}
   m_Layer: 0
   m_Name: weapon
@@ -1128,6 +1175,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7405423638416219486}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1380699196663020155
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4899447725776288269}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 14
+  m_CollisionDetection: 0
 --- !u!114 &3445459988394987967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1143,9 +1217,13 @@ MonoBehaviour:
   bulletInterval: 0.4
   damage: 25
   bulletNum: 1
+  activationDistance: 20
+  isShooting: 0
   firePrefab: {fileID: 100006, guid: 35fb64dd052826e4f932277d1cab99cc, type: 3}
   bulletPrefab: {fileID: 3911352728811700513, guid: 9e4928e0c5829a24db65989da96caa57, type: 3}
   rotation: {x: 0, y: 0, z: 0, w: 1}
+  player: {fileID: 0}
+  rb: {fileID: 1380699196663020155}
 --- !u!1 &5168608342605438112
 GameObject:
   m_ObjectHideFlags: 0
