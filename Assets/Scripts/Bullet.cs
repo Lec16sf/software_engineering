@@ -78,7 +78,8 @@ public class Bullet : Character
         {
             endurance--;
             player.health += health * vampireRate;
-            // Debug.Log(damage);
+            float enemyhealth = collisionInfo.GetComponent<Enemy>().health;
+            collisionInfo.GetComponent<Enemy>().ChangeHealth(health);
             if(endurance <= 0)
             {
                 Die();

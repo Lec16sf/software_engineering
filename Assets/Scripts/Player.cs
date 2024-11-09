@@ -39,7 +39,9 @@ public class Player : Character
     {
         if(collisionInfo.collider.tag == "Enemy")
         {
-            this.ChangeHealth(collisionInfo.collider.GetComponent<Enemy>().health*(1-gameManager.damageReductionRate));
+            float playerhealth=health, enemyhealth=collisionInfo.collider.GetComponent<Enemy>().health;
+            this.ChangeHealth(enemyhealth*(1-gameManager.damageReductionRate));
+            collisionInfo.collider.GetComponent<Enemy>().ChangeHealth(playerhealth);
         }
     }
 

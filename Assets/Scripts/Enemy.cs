@@ -60,37 +60,37 @@ public class Enemy : Character
         }
     }
 
-    void OnCollisionEnter(Collision collisionInfo)
-    {
-        if(collisionInfo.collider.tag == "Player")
-        {
-            this.ChangeHealth(collisionInfo.collider.GetComponent<Player>().health);
-        }
-        if(collisionInfo.collider.tag == "Bullet")
-        {
-            this.ChangeHealth(collisionInfo.collider.GetComponent<Bullet>().health);
-        }
-    }
+    // void OnCollisionEnter(Collision collisionInfo)
+    // {
+    //     if(collisionInfo.collider.tag == "Player")
+    //     {
+    //         this.ChangeHealth(collisionInfo.collider.GetComponent<Player>().health);
+    //     }
+    //     if(collisionInfo.collider.tag == "Bullet")
+    //     {
+    //         this.ChangeHealth(collisionInfo.collider.GetComponent<Bullet>().health);
+    //     }
+    // }
 
-    void OnTriggerEnter(Collider collisionInfo)
-    {
-        if (collisionInfo.CompareTag("Player"))
-        {
-            Player player = collisionInfo.GetComponent<Player>();
-            if (player != null)
-            {
-                this.ChangeHealth(player.health);
-            }
-        }
-        else if (collisionInfo.CompareTag("Bullet"))
-        {
-            Bullet bullet = collisionInfo.GetComponent<Bullet>();
-            if (bullet != null)
-            {
-                this.ChangeHealth(bullet.health);
-            }
-        }
-    }
+    // void OnTriggerEnter(Collider collisionInfo)
+    // {
+    //     if (collisionInfo.CompareTag("Player"))
+    //     {
+    //         Player player = collisionInfo.GetComponent<Player>();
+    //         if (player != null)
+    //         {
+    //             this.ChangeHealth(player.health);
+    //         }
+    //     }
+    //     else if (collisionInfo.CompareTag("Bullet"))
+    //     {
+    //         Bullet bullet = collisionInfo.GetComponent<Bullet>();
+    //         if (bullet != null)
+    //         {
+    //             this.ChangeHealth(bullet.health);
+    //         }
+    //     }
+    // }
 
     public override void Die()
     {
