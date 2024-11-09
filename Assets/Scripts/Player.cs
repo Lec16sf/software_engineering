@@ -20,7 +20,7 @@ public class Player : Character
     {
         base.FixedUpdate();
         GameObject boss = GameObject.FindWithTag("BOSS");
-        if(boss == null || boss.GetComponent<Rigidbody>().position.z > rb.position.z+10)
+        if(boss == null || boss.GetComponent<Rigidbody>().position.z > rb.position.z+20)
         {
             rb.AddForce(0, 0, forwardForce*Time.deltaTime);
         }

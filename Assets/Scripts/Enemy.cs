@@ -9,7 +9,7 @@ public class Enemy : Character
     public Vector3 HealthBaroffset = new Vector3(0, 1.5f, 0);
     public Renderer[] renderers;
     public Collider[] colliders;
-    public float activationDistance = 20f;
+    public float activationDistance = 30f;
 
     public override void Start()
     {
@@ -49,7 +49,10 @@ public class Enemy : Character
             {
                 col.enabled = true;
             }
+            if(healthBar != null)
+            {
             healthBar.gameObject.SetActive(true);
+            }
         }
         if(player.rb.position.z > rb.position.z)
         {
@@ -92,6 +95,7 @@ public class Enemy : Character
     public override void Die()
     {
         Disappear();
+        Destroy(gameObject);
         Vector3 chestPos = transform.position + new Vector3(0, 0, 0);
         Instantiate(chest, chestPos, Quaternion.identity);
     }
@@ -102,7 +106,6 @@ public class Enemy : Character
             Destroy(healthBar.gameObject);
             healthBar = null;
         }
-        Destroy(gameObject);
     }
 
 }
