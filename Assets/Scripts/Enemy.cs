@@ -6,6 +6,7 @@ public class Enemy : Character
     public HealthBar healthBar;
     public Chest chest;
     public Character player;
+    public Vector3 HealthBaroffset = new Vector3(0, 1.5f, 0);
 
     public override void Start()
     {
@@ -17,6 +18,7 @@ public class Enemy : Character
         player = GameObject.FindObjectOfType<Player>();
         healthBar = Instantiate(healthBar, canvas.transform);
         healthBar.character = this;
+        healthBar.offset = HealthBaroffset;
         rb.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
     }
 
@@ -63,8 +65,9 @@ public class Enemy : Character
 
     public override void Die()
     {
+        Debug.Log("EnemyDie");
         Disappear();
-        Vector3 chestPos = transform.position + new Vector3(0, -1, 0);
+        Vector3 chestPos = transform.position + new Vector3(0, 0, 0);
         Instantiate(chest, chestPos, Quaternion.identity);
     }
 

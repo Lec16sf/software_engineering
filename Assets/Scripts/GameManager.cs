@@ -122,11 +122,19 @@ public class GameManager : MonoBehaviour
                 break;
             case 10:
                 buffLevel[10]++;
-                damageReductionRate += 0.1f;
+                if(buffLevel[10] == 1){
+                    damageReductionRate += 0.1f;
+                }else{
+                    damageReductionRate += 0.2f;
+                }
                 break;
             case 11:
                 buffLevel[11]++;
-                vampireRate += 0.1f;
+                if(buffLevel[11] == 1){
+                    damageReductionRate += 0.04f;
+                }else{
+                    damageReductionRate += 0.03f;
+                }
                 break;
             default:
                 break;

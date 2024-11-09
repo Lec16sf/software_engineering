@@ -9,6 +9,8 @@ TagManager:
   - Chest
   - Ground
   - GameManager
+  - Fire
+  - BOSS
   layers:
   - Default
   - TransparentFX

@@ -1698,8 +1698,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!54 &3687000444584945552
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1764,9 +1764,8 @@ MonoBehaviour:
   rb: {fileID: 3687000444584945552}
   forwardForce: 500
   sidewaysForce: 20
-  bulletPrefab: {fileID: 4697780555387755104, guid: 89cf3ca4eec739447b9c494f5f529498, type: 3}
-  bulletInterval: 0.5
   animator: {fileID: 1367280927614214466}
+  boss: {fileID: 0}
 --- !u!1 &4826960661858930774
 GameObject:
   m_ObjectHideFlags: 0

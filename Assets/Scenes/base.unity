@@ -1520,6 +1520,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 795298631050960114, guid: 9c55896c636ea8b468673545aadcd05d, type: 3}
+      propertyPath: forwardForce
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879211162646506731, guid: 9c55896c636ea8b468673545aadcd05d, type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879211162646506731, guid: 9c55896c636ea8b468673545aadcd05d, type: 3}
+      propertyPath: m_Center.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4705959546900231405, guid: 9c55896c636ea8b468673545aadcd05d, type: 3}
       propertyPath: m_Name
       value: Soldier
@@ -1583,7 +1595,7 @@ PrefabInstance:
       objectReference: {fileID: 545689433}
     - target: {fileID: 7308873538055209391, guid: 2d834a7894b81794f88715e76da14395, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.72
+      value: -0.22
       objectReference: {fileID: 0}
     - target: {fileID: 7308873538055209391, guid: 2d834a7894b81794f88715e76da14395, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1591,7 +1603,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7308873538055209391, guid: 2d834a7894b81794f88715e76da14395, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.51
+      value: 10.8
       objectReference: {fileID: 0}
     - target: {fileID: 7308873538055209391, guid: 2d834a7894b81794f88715e76da14395, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1699,9 +1711,29 @@ PrefabInstance:
       propertyPath: canvas
       value: 
       objectReference: {fileID: 545689433}
+    - target: {fileID: 282513784084978842, guid: 8f95a856641154b49847875cef9ade4f, type: 3}
+      propertyPath: health
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 3968171070736913509, guid: 8f95a856641154b49847875cef9ade4f, type: 3}
       propertyPath: m_Name
       value: mech
+      objectReference: {fileID: 0}
+    - target: {fileID: 4297112545639873936, guid: 8f95a856641154b49847875cef9ade4f, type: 3}
+      propertyPath: m_Size.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4297112545639873936, guid: 8f95a856641154b49847875cef9ade4f, type: 3}
+      propertyPath: m_Size.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4297112545639873936, guid: 8f95a856641154b49847875cef9ade4f, type: 3}
+      propertyPath: m_Size.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4297112545639873936, guid: 8f95a856641154b49847875cef9ade4f, type: 3}
+      propertyPath: m_Center.y
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7405423638416219486, guid: 8f95a856641154b49847875cef9ade4f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1709,7 +1741,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7405423638416219486, guid: 8f95a856641154b49847875cef9ade4f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7405423638416219486, guid: 8f95a856641154b49847875cef9ade4f, type: 3}
       propertyPath: m_LocalPosition.z

@@ -25,6 +25,7 @@ public class Character : MonoBehaviour
 
     public virtual void Die()
     {
+        Debug.Log("CharacterDie");
         Destroy(gameObject);
     }
 

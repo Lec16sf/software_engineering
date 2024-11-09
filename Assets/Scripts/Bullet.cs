@@ -83,7 +83,7 @@ public class Bullet : Character
             {
                 Die();
             }
-            Debug.Log(this.health);
+            Debug.Log("Bullet "+this.health);
         }
     }
 }
