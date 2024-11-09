@@ -74,11 +74,12 @@ public class Bullet : Character
 
     void OnTriggerEnter(Collider collisionInfo)
     {
-        if (collisionInfo.CompareTag("Enemy"))
+        if (collisionInfo.CompareTag("Enemy") || collisionInfo.CompareTag("BOSS"))
         {
             endurance--;
             player.health += health * vampireRate;
-            // Debug.Log(damage);
+            float enemyhealth = collisionInfo.GetComponent<Enemy>().health;
+            collisionInfo.GetComponent<Enemy>().ChangeHealth(health);
             if(endurance <= 0)
             {
                 Die();

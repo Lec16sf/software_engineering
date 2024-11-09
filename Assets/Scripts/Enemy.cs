@@ -9,7 +9,8 @@ public class Enemy : Character
     public Vector3 HealthBaroffset = new Vector3(0, 1.5f, 0);
     public Renderer[] renderers;
     public Collider[] colliders;
-    public float activationDistance = 20f;
+    public float activationDistance = 30f;
+    //public GameObject platfrom;
 
     public override void Start()
     {
@@ -49,7 +50,10 @@ public class Enemy : Character
             {
                 col.enabled = true;
             }
+            if(healthBar != null)
+            {
             healthBar.gameObject.SetActive(true);
+            }
         }
         if(player.rb.position.z > rb.position.z)
         {
@@ -57,41 +61,46 @@ public class Enemy : Character
         }
     }
 
-    void OnCollisionEnter(Collision collisionInfo)
-    {
-        if(collisionInfo.collider.tag == "Player")
-        {
-            this.ChangeHealth(collisionInfo.collider.GetComponent<Player>().health);
-        }
-        if(collisionInfo.collider.tag == "Bullet")
-        {
-            this.ChangeHealth(collisionInfo.collider.GetComponent<Bullet>().health);
-        }
-    }
+    // void OnCollisionEnter(Collision collisionInfo)
+    // {
+    //     if(collisionInfo.collider.tag == "Player")
+    //     {
+    //         this.ChangeHealth(collisionInfo.collider.GetComponent<Player>().health);
+    //     }
+    //     if(collisionInfo.collider.tag == "Bullet")
+    //     {
+    //         this.ChangeHealth(collisionInfo.collider.GetComponent<Bullet>().health);
+    //     }
+    // }
 
-    void OnTriggerEnter(Collider collisionInfo)
-    {
-        if (collisionInfo.CompareTag("Player"))
-        {
-            Player player = collisionInfo.GetComponent<Player>();
-            if (player != null)
-            {
-                this.ChangeHealth(player.health);
-            }
-        }
-        else if (collisionInfo.CompareTag("Bullet"))
-        {
-            Bullet bullet = collisionInfo.GetComponent<Bullet>();
-            if (bullet != null)
-            {
-                this.ChangeHealth(bullet.health);
-            }
-        }
-    }
+    // void OnTriggerEnter(Collider collisionInfo)
+    // {
+    //     if (collisionInfo.CompareTag("Player"))
+    //     {
+    //         Player player = collisionInfo.GetComponent<Player>();
+    //         if (player != null)
+    //         {
+    //             this.ChangeHealth(player.health);
+    //         }
+    //     }
+    //     else if (collisionInfo.CompareTag("Bullet"))
+    //     {
+    //         Bullet bullet = collisionInfo.GetComponent<Bullet>();
+    //         if (bullet != null)
+    //         {
+    //             this.ChangeHealth(bullet.health);
+    //         }
+    //     }
+    // }
 
     public override void Die()
     {
         Disappear();
+        //if (platfrom == null)
+        //{
+        //    Destroy(platfrom);
+        //}
+        Destroy(gameObject);
         Vector3 chestPos = transform.position + new Vector3(0, 0, 0);
         Instantiate(chest, chestPos, Quaternion.identity);
     }
@@ -102,7 +111,6 @@ public class Enemy : Character
             Destroy(healthBar.gameObject);
             healthBar = null;
         }
-        Destroy(gameObject);
     }
 
 }

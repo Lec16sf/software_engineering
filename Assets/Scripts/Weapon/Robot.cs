@@ -6,10 +6,10 @@ namespace Weapon
 {
     public class Robot: MonoBehaviour
     {
-        public float bulletInterval = 0.4f;
+        public float bulletInterval = 1f;
         public float damage = 25f;
         public int bulletNum = 1;
-        public float activationDistance = 20f;
+        public float activationDistance = 30f;
         public bool isShooting = false;
         public GameObject firePrefab;
         public GameObject bulletPrefab;
@@ -29,7 +29,6 @@ namespace Weapon
                 yield return new WaitForSeconds(2f);
                 int shootMethod = Random.Range(1, 7);
                 int times;
-                Debug.Log("shootMethod: " + shootMethod);
                 switch (shootMethod)
                 {
                     case 1:
@@ -172,7 +171,6 @@ namespace Weapon
         {
             if(rb.position.z < player.rb.position.z+activationDistance && isShooting == false)
             {
-                Debug.Log("start shooting");
                 shootingCoroutine = StartCoroutine(ShootBullets());
                 isShooting = true;
             }

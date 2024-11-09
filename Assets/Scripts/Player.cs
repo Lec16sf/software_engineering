@@ -20,7 +20,7 @@ public class Player : Character
     {
         base.FixedUpdate();
         GameObject boss = GameObject.FindWithTag("BOSS");
-        if(boss == null || boss.GetComponent<Rigidbody>().position.z > rb.position.z+10)
+        if(boss == null || boss.GetComponent<Rigidbody>().position.z > rb.position.z+20)
         {
             rb.AddForce(0, 0, forwardForce*Time.deltaTime);
         }
@@ -39,7 +39,9 @@ public class Player : Character
     {
         if(collisionInfo.collider.tag == "Enemy")
         {
-            this.ChangeHealth(collisionInfo.collider.GetComponent<Enemy>().health*(1-gameManager.damageReductionRate));
+            float playerhealth=health, enemyhealth=collisionInfo.collider.GetComponent<Enemy>().health;
+            this.ChangeHealth(enemyhealth*(1-gameManager.damageReductionRate));
+            collisionInfo.collider.GetComponent<Enemy>().ChangeHealth(playerhealth);
         }
     }
 
