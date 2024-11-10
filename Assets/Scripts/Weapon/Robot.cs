@@ -90,8 +90,8 @@ namespace Weapon
         
         public void ShootMethod1()
         {
-            Instantiate(firePrefab, transform.position + new Vector3(-3f, 1.5f, -3.791f), rotation);
-            Instantiate(firePrefab, transform.position + new Vector3(3f, 1.5f, -3.791f), rotation);
+            Instantiate(firePrefab, transform.position + new Vector3(-5.5f, 1.5f, -3.791f), rotation);
+            Instantiate(firePrefab, transform.position + new Vector3(5.5f, 1.5f, -3.791f), rotation);
         }
 
         public void ShootMethod2()
@@ -102,13 +102,13 @@ namespace Weapon
         public void ShootMethod3()
         {
             Instantiate(firePrefab, transform.position + new Vector3(0f, 1.5f, -3.791f), rotation);
-            Instantiate(firePrefab, transform.position + new Vector3(3f, 1.5f, -3.791f), rotation);
+            Instantiate(firePrefab, transform.position + new Vector3(5.5f, 1.5f, -3.791f), rotation);
         }
 
         public void ShootMethod4()
         {
             Instantiate(firePrefab, transform.position + new Vector3(0f, 1.5f, -3.791f), rotation);
-            Instantiate(firePrefab, transform.position + new Vector3(-3f, 1.5f, -3.791f), rotation);
+            Instantiate(firePrefab, transform.position + new Vector3(-5.5f, 1.5f, -3.791f), rotation);
         }
 
         public void ShootMethod5()

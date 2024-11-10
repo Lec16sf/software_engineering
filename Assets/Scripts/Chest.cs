@@ -15,6 +15,7 @@ public class Chest : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Destroy(gameObject);
+            gameManager.money += Random.Range(1, 6);
             gameManager.getBuff();
         }
     }

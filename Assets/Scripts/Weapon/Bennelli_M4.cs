@@ -58,6 +58,7 @@ namespace Weapon
         {
             base.FixedUpdate();
             bulletInterval = bulletIntervalBase * bulletIntervalReduceRate;
+            bulletNum = gameManager.bulletNum;
         }
     }
 }
