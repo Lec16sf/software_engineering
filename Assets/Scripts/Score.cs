@@ -13,6 +13,6 @@ public class Score : MonoBehaviour
 
     void FixedUpdate()
     {
-        scoreText.text = "Score:" + player.position.z.ToString("0");
+        scoreText.text = "Score:" + GameManager.score.ToString();
     }
 }
