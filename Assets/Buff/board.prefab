@@ -244,7 +244,7 @@ MonoBehaviour:
   text: {fileID: 8741699912541932620}
   BuffIndex: 0
   textColor: {r: 0, g: 0, b: 0, a: 1}
-  textSize: 10
+  textSize: 20
   gameManager: {fileID: 0}
   player: {fileID: 0}
 --- !u!1 &6132179540475267241

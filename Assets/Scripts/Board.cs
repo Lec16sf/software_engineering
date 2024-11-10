@@ -30,7 +30,12 @@ public class Board : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && (Mathf.Abs(other.transform.position.x - transform.position.x) < 2.4f))
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("trigger");
+            Debug.Log(other.transform.position.x - transform.position.x);
+        }
+        if (other.CompareTag("Player") && (Mathf.Abs(other.transform.position.x - transform.position.x) < 4.8f))
         {
             Destroy(gameObject);
             gameManager.getBuff(BuffIndex);
