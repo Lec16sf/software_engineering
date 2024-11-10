@@ -6,7 +6,8 @@ public class GameManager : MonoBehaviour
 {
     bool gameHasEnded = false;
     public float restartDelay = 4f;
-    public GameObject completeLevelUI;
+    public GameObject PassPanel;
+    public GameObject DeathPanel;
     public int buffNum = 12;
     public int[] buffLevel = new int[100];
     private System.Random random = new System.Random();
@@ -57,7 +58,8 @@ public class GameManager : MonoBehaviour
 
     public void Complete()
     {
-        completeLevelUI.SetActive(true);
+        PassPanel.SetActive(true);
+        Time.timeScale = 0f;
         Clear();
     }
 
@@ -65,17 +67,8 @@ public class GameManager : MonoBehaviour
     {
         if(gameHasEnded == false)
         {
-            gameHasEnded = true;
-            Invoke("Restart", restartDelay);
-        }
-    }
-
-    void Restart()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        for (int i = 0; i < 21; i++)
-        {
-            buffLevel[i] = 0;
+            DeathPanel.SetActive(true);
+            Time.timeScale = 0f;
         }
     }
 
