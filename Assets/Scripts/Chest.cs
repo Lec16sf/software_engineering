@@ -18,4 +18,5 @@ public class Chest : MonoBehaviour
             gameManager.getBuff();
         }
     }
+
 }

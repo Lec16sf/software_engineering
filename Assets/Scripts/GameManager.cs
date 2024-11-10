@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class GameManager : MonoBehaviour
     public float criticalHitEnhanceRate  = 1f;
     public float damageReductionRate = 0f;
     public float vampireRate = 0f;
+    public GameObject ChestMenuUI;
+    public static int[] ChextBuffIndexs = new int [3];
 
 
     public void Start()
@@ -145,7 +148,23 @@ public class GameManager : MonoBehaviour
 
     public void getBuff()
     {
-        //TODO
+        ChestMenuUI.SetActive(true);
+        int i=0;
+        foreach (Transform child in ChestMenuUI.transform)
+        {
+            ChextBuffIndexs[i] = getBuffNum();
+            TextMeshProUGUI[] textComponents = child.GetComponentsInChildren<TextMeshProUGUI>();
+            foreach (TextMeshProUGUI textComponent in textComponents)
+            {
+                if (textComponent != null && textComponent.name == "Text (TMP)")
+                {
+                    textComponent.text = BuffText[ChextBuffIndexs[i]];
+                }
+            }
+            i++;
+        }
+        PauseMenu.GameIsPaused = true;
+        Time.timeScale = 0f;
     }
 
     public int getBuffNum()
@@ -161,5 +180,27 @@ public class GameManager : MonoBehaviour
             return getBuffNum();
         }
         return randomNum;
+    }
+
+    public void LeftButton()
+    {
+        getBuff(GameManager.ChextBuffIndexs[0]);
+        PauseMenu.GameIsPaused = false;
+        Time.timeScale = 1f;
+        ChestMenuUI.SetActive(false);
+    }
+    public void MidButton()
+    {
+        getBuff(GameManager.ChextBuffIndexs[1]);
+        PauseMenu.GameIsPaused = false;
+        Time.timeScale = 1f;
+        ChestMenuUI.SetActive(false);
+    }
+    public void RightButton()
+    {
+        getBuff(GameManager.ChextBuffIndexs[2]);
+        PauseMenu.GameIsPaused = false;
+        Time.timeScale = 1f;
+        ChestMenuUI.SetActive(false);
     }
 }
