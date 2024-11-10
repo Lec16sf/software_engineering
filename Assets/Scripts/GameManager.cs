@@ -81,6 +81,7 @@ public class GameManager : MonoBehaviour
 
     public void getBuff(int index)
     {
+        Debug.Log("getbuff" +index);
         switch (index)
         {
             case 0:

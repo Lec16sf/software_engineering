@@ -34,7 +34,6 @@ public class Board : MonoBehaviour
         {
             Destroy(gameObject);
             gameManager.getBuff(BuffIndex);
-            Debug.Log("getbuff"+BuffIndex);
         }
     }
 }
