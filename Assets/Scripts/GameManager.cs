@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class GameManager : MonoBehaviour
     public int[] buffLevel = new int[100];
     private System.Random random = new System.Random();
     Player player;
-    public static string[] BuffText = new string[] { "子弹速度+10", "子弹射击间隔-10%", "子弹耐久+1", "子弹数量+1", "血量+", "血量*", "横向速度+5", "伤害倍率+20%", "暴击率+5%", "暴击伤害+30%", "撞击免伤", "子弹吸血"};
+    public static string[] BuffText = new string[] { "子弹速度+10", "子弹射击间隔-10%", "子弹耐久+1", "子弹数量+1", "血量提高", "血量倍增", "横向速度+5", "伤害倍率+20%", "暴击率+5%", "暴击伤害+30%", "撞击免伤", "子弹吸血"};
     public float damage;
     public float speed = 20f;
     public float bulletIntervalReduceRate = 1f;
@@ -22,6 +23,8 @@ public class GameManager : MonoBehaviour
     public float criticalHitEnhanceRate  = 1f;
     public float damageReductionRate = 0f;
     public float vampireRate = 0f;
+    public GameObject ChestMenuUI;
+    public static int[] ChextBuffIndexs = new int [3];
 
 
     public void Start()
@@ -78,6 +81,7 @@ public class GameManager : MonoBehaviour
 
     public void getBuff(int index)
     {
+        Debug.Log("getbuff" +index);
         switch (index)
         {
             case 0:
@@ -98,11 +102,13 @@ public class GameManager : MonoBehaviour
                 break;
             case 4:
                 buffLevel[4]++;
-                player.health += random.Next(10, 500);
+                double random1 = random.NextDouble()*500;
+                player.health += (float)random1;
                 break;
             case 5:
                 buffLevel[5]++;
-                player.health *= random.Next(1, 2);
+                double random2 = random.NextDouble()+1.5;
+                player.health *= (float)random2;
                 break;
             case 6:
                 buffLevel[6]++;
@@ -143,7 +149,23 @@ public class GameManager : MonoBehaviour
 
     public void getBuff()
     {
-        //TODO
+        ChestMenuUI.SetActive(true);
+        int i=0;
+        foreach (Transform child in ChestMenuUI.transform)
+        {
+            ChextBuffIndexs[i] = getBuffNum();
+            TextMeshProUGUI[] textComponents = child.GetComponentsInChildren<TextMeshProUGUI>();
+            foreach (TextMeshProUGUI textComponent in textComponents)
+            {
+                if (textComponent != null && textComponent.name == "Text (TMP)")
+                {
+                    textComponent.text = BuffText[ChextBuffIndexs[i]];
+                }
+            }
+            i++;
+        }
+        PauseMenu.GameIsPaused = true;
+        Time.timeScale = 0f;
     }
 
     public int getBuffNum()
@@ -159,5 +181,27 @@ public class GameManager : MonoBehaviour
             return getBuffNum();
         }
         return randomNum;
+    }
+
+    public void LeftButton()
+    {
+        getBuff(GameManager.ChextBuffIndexs[0]);
+        PauseMenu.GameIsPaused = false;
+        Time.timeScale = 1f;
+        ChestMenuUI.SetActive(false);
+    }
+    public void MidButton()
+    {
+        getBuff(GameManager.ChextBuffIndexs[1]);
+        PauseMenu.GameIsPaused = false;
+        Time.timeScale = 1f;
+        ChestMenuUI.SetActive(false);
+    }
+    public void RightButton()
+    {
+        getBuff(GameManager.ChextBuffIndexs[2]);
+        PauseMenu.GameIsPaused = false;
+        Time.timeScale = 1f;
+        ChestMenuUI.SetActive(false);
     }
 }

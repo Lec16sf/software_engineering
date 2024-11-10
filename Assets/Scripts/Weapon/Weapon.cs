@@ -50,6 +50,7 @@ namespace Weapon
         {
             gameManager.damage = damage;
         }
+        
         public void OnEnable()
         {
             if (player == null)
