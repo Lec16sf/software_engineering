@@ -15,6 +15,9 @@ namespace Weapon
             // Debug.Log(bulletInterval);
             while (player.health > 0)
             {
+                // Debug.Log("bulletIntervalBase: " + bulletIntervalBase);
+                // Debug.Log("bulletIntervalReduceRate: " + bulletIntervalReduceRate);
+                // Debug.Log("bulletInterval: " + bulletInterval);
                 yield return new WaitForSeconds(bulletInterval);
                 Shoot();
             }

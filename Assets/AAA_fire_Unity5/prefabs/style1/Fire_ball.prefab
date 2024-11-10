@@ -4835,7 +4835,7 @@ GameObject:
   - component: {fileID: 5853656648140367296}
   - component: {fileID: -7240365168017108808}
   - component: {fileID: 19900002}
-  - component: {fileID: 3204064330954262078}
+  - component: {fileID: -7268099283401056966}
   m_Layer: 0
   m_Name: Fire_ball
   m_TagString: Untagged
@@ -9603,7 +9603,7 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &3204064330954262078
+--- !u!114 &-7268099283401056966
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9612,11 +9612,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 100004}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b8c04361abc5fb41b08a01a2a858f26, type: 3}
+  m_Script: {fileID: 11500000, guid: b72ee8e113e33ee459126cc6ae220610, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  rb: {fileID: 0}
+  rb: {fileID: -7240365168017108808}
   damage: 25
   finalEndurance: 1
   endurance: 1

@@ -33,29 +33,22 @@ public class Bullet : Character
         vampireRate = gameManager.vampireRate;
 
         health = damage * damageEnhanceRate;
+        // Debug.Log("basedamage: " + damage);
+        // Debug.Log("damageEnhanceRate: " + damageEnhanceRate);
+        // Debug.Log("damage: " + health);
         if(Random.value < criticalHitRate)
         {
             health *= criticalHitEnhanceRate;
+            // Debug.Log("damage: " + damage);
+            // Debug.Log("criticalHitEnhanceRate: " + criticalHitEnhanceRate);
+            // Debug.Log("criticalHitRate: " + criticalHitRate);
+            // Debug.Log("critical: " + health);
         }
     }
 
     public override void FixedUpdate()
     {
         rb.velocity = transform.forward * speed;
-        damage = gameManager.damage;
-        endurance = gameManager.endurance;
-        speed = gameManager.speed;
-        criticalHitRate = gameManager.criticalHitRate;
-        criticalHitEnhanceRate = gameManager.criticalHitEnhanceRate;
-        damageEnhanceRate = gameManager.damageEnhanceRate;
-        vampireRate = gameManager.vampireRate;
-
-        health = damage * damageEnhanceRate;
-        if(Random.value < criticalHitRate)
-        {
-            health *= criticalHitEnhanceRate;
-        }
-        // Debug.Log(health);
     }
 
     void OnCollisionEnter(Collision collision)
@@ -78,6 +71,8 @@ public class Bullet : Character
         {
             endurance--;
             player.health += health * vampireRate;
+            // Debug.Log("vampireRate: " + vampireRate);
+            // Debug.Log("vampire " + health * vampireRate);
             float enemyhealth = collisionInfo.GetComponent<Enemy>().health;
             collisionInfo.GetComponent<Enemy>().ChangeHealth(health);
             if(endurance <= 0)
