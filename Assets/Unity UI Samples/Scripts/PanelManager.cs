@@ -30,26 +30,26 @@ public class PanelManager : MonoBehaviour {
 		if (m_Open == anim)
 			return;
 
-		anim.gameObject.SetActive(true);
-		var newPreviouslySelected = EventSystem.current.currentSelectedGameObject;
+		anim.gameObject.SetActive(true);//设置游戏对象为激活状态
+		var newPreviouslySelected = EventSystem.current.currentSelectedGameObject;//当前选择的游戏对象
 
-		anim.transform.SetAsLastSibling();
+		anim.transform.SetAsLastSibling();//设置为最后一个兄弟
 
-		CloseCurrent();
+		CloseCurrent();//关闭当前
 
-		m_PreviouslySelected = newPreviouslySelected;
+		m_PreviouslySelected = newPreviouslySelected;//新的先前选择的游戏对象
 
-		m_Open = anim;
-		m_Open.SetBool(m_OpenParameterId, true);
+		m_Open = anim;//新的打开的动画
+		m_Open.SetBool(m_OpenParameterId, true);//设置布尔值
 
-		GameObject go = FindFirstEnabledSelectable(anim.gameObject);
+		GameObject go = FindFirstEnabledSelectable(anim.gameObject);//查找第一个启用的可选择对象
 
 		SetSelected(go);
 	}
 
 	static GameObject FindFirstEnabledSelectable (GameObject gameObject)//查找第一个启用的可选择对象
 	{
-		GameObject go = null;
+		GameObject go = null;//游戏对象
 		var selectables = gameObject.GetComponentsInChildren<Selectable> (true);
 		foreach (var selectable in selectables) {
 			if (selectable.IsActive () && selectable.IsInteractable ()) {
@@ -92,5 +92,10 @@ public class PanelManager : MonoBehaviour {
 	private void SetSelected(GameObject go)//设置选择
 	{
 		EventSystem.current.SetSelectedGameObject(go);
+	}
+
+	public void Store(){
+		//转移到商店界面scene
+		UnityEngine.SceneManagement.SceneManager.LoadScene("Store");
 	}
 }
