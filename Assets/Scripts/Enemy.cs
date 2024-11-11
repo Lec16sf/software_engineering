@@ -3,6 +3,7 @@ using UnityEngine;
 public class Enemy : Character
 {
     public Canvas canvas;
+    public int score = 10;
     public HealthBar healthBar;
     public Chest chest;
     public Character player;
@@ -103,6 +104,7 @@ public class Enemy : Character
         Destroy(gameObject);
         Vector3 chestPos = transform.position + new Vector3(0, 0, 0);
         Instantiate(chest, chestPos, Quaternion.identity);
+        GameManager.score += score;
     }
 
     public void Disappear()

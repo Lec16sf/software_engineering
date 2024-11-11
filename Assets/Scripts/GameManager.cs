@@ -4,11 +4,14 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    bool gameHasEnded = false;
+    public int money = 0;
+    public static int score = 0;
+    public bool gameHasEnded = false;
     public float restartDelay = 4f;
-    public GameObject completeLevelUI;
+    public GameObject PassPanel;
+    public GameObject DeathPanel;
     public int buffNum = 12;
-    public int[] buffLevel = new int[100];
+    public int[] buffLevel = new int[20];
     private System.Random random = new System.Random();
     Player player;
     public static string[] BuffText = new string[] { "子弹速度+10", "子弹射击间隔-10%", "子弹耐久+1", "子弹数量+1", "血量提高", "血量倍增", "横向速度+5", "伤害倍率+20%", "暴击率+5%", "暴击伤害+30%", "撞击免伤", "子弹吸血"};
@@ -25,57 +28,49 @@ public class GameManager : MonoBehaviour
     public float vampireRate = 0f;
     public GameObject ChestMenuUI;
     public static int[] ChextBuffIndexs = new int [3];
-
+    public GameSave data;
 
     public void Start()
     {
-        Clear();
+        Load();
         player = GameObject.FindObjectOfType<Player>();
     }
 
-    public void FixedUpdate()
-    {
+    public void Load(){
+        data = SaveSystem.LoadFromJson<GameSave>("GameData.json");
+        if(data == null){
+            data = new GameSave();
+            data.buffLevel = new int[20];
+            for(int i = 0; i < buffNum; i++){
+                data.buffLevel[i] = 0;
+            }
+        }
+        money = data.money;
+        for(int i = 0; i < buffNum; i++){
+            while(buffLevel[i]<data.buffLevel[i]){
+                getBuff(i);
+            }
+        }
     }
 
-    public void Clear()
-    {
-        for (int i = 0; i < 21; i++)
-        {
-            buffLevel[i] = 0;
-        }
-        speed = 20f;
-        bulletIntervalReduceRate = 1f;
-        endurance = 1;
-        bulletNum = 7;
-        sidewaysForce = 10f;
-        damageEnhanceRate = 1f;
-        criticalHitRate = 0f;
-        criticalHitEnhanceRate  = 1f;
-        damageReductionRate = 0f;
-        vampireRate = 0.04f;
+    public void Save(){
+        data.money = money;
+        SaveSystem.SaveByJson("GameData.json", data);
     }
 
     public void Complete()
     {
-        completeLevelUI.SetActive(true);
-        Clear();
+        PassPanel.SetActive(true);
+        Time.timeScale = 0f;
+        Save();
     }
 
     public void EndGame()
     {
         if(gameHasEnded == false)
         {
-            gameHasEnded = true;
-            Invoke("Restart", restartDelay);
-        }
-    }
-
-    void Restart()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        for (int i = 0; i < 21; i++)
-        {
-            buffLevel[i] = 0;
+            DeathPanel.SetActive(true);
+            Time.timeScale = 0f;
         }
     }
 

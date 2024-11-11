@@ -38,10 +38,12 @@ public class PauseMenu : MonoBehaviour
         GameIsPaused = true;
     }
 
+
+
     public void LoadMenu()
     {
         Time.timeScale = 1f;
-        //UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
     }
 
     public void Quit()
@@ -51,5 +53,11 @@ public class PauseMenu : MonoBehaviour
 		#else
 		Application.Quit();
 		#endif
+    }
+
+    public void Restart()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
