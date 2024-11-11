@@ -11,10 +11,10 @@ public class GameManager : MonoBehaviour
     public float restartDelay = 4f;
     public GameObject PassPanel;
     public GameObject DeathPanel;
-    public int buffNum = 12;
+    public static int buffNum = 12;
     public int[] buffLevel = new int[20];
     private System.Random random = new System.Random();
-    Player player;
+    public Player player;
     public static string[] BuffText = new string[] { "子弹速度+10", "子弹射击间隔-10%", "子弹耐久+1", "子弹数量+1", "血量提高", "血量倍增", "横向速度+5", "伤害倍率+20%", "暴击率+5%", "暴击伤害+30%", "撞击免伤", "子弹吸血"};
     public float damage;
     public float speed = 20f;

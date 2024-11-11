@@ -13,9 +13,12 @@ public class ShopManagerScript : MonoBehaviour
     public string[] buffName = new string[20];
     public int coins;
     public Text coinsTxt;
+    public int[] buffLevel = new int[20];
+    public GameSave data;
 
     void Start()
     {
+        Load();
         coinsTxt.text = coins.ToString();
 
         //物品ID
@@ -33,7 +36,7 @@ public class ShopManagerScript : MonoBehaviour
         //物品数量,即等级
         for(int i = 1; i < 20; i++)
         {
-            shopItems[3, i] = 0;
+            shopItems[3, i] = buffLevel[i-1];
         }
 
         //物品最大数量，即最高等级，或者最大宠物数量
@@ -64,8 +67,13 @@ public class ShopManagerScript : MonoBehaviour
             //查看是否有足够的物品
             if(shopItems[3, ButtonRef.GetComponent<ButtonInfo>().ItemID] < shopItems[4, ButtonRef.GetComponent<ButtonInfo>().ItemID])
             {
+                Load();
                 //需要修改到存档
                 coins -= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().ItemID];//减去对应价格的金币
+                if(ButtonRef.GetComponent<ButtonInfo>().ItemID<=11){
+                    buffLevel[ButtonRef.GetComponent<ButtonInfo>().ItemID-1]++;
+                }
+                Save();
                 //重新显示金币数量
                 coinsTxt.text = coins.ToString();
                 shopItems[3, ButtonRef.GetComponent<ButtonInfo>().ItemID]++;
@@ -73,5 +81,28 @@ public class ShopManagerScript : MonoBehaviour
                 ButtonRef.GetComponent<ButtonInfo>().QuantityTxt.text = "等级：" + shopItems[3, ButtonRef.GetComponent<ButtonInfo>().ItemID].ToString() + "/" + shopItems[4, ButtonRef.GetComponent<ButtonInfo>().ItemID].ToString();
             }
         }
+    }
+
+    public void Load()
+    {
+        data = SaveSystem.LoadFromJson<GameSave>("GameData.json");
+        if(data == null){
+            data = new GameSave();
+            data.buffLevel = new int[20];
+            for(int i = 0; i < GameManager.buffNum; i++){
+                data.buffLevel[i] = 0;
+            }
+        }
+        coins = data.money;
+        for(int i = 0; i < GameManager.buffNum; i++){
+            buffLevel[i] = data.buffLevel[i];
+        }
+    }
+
+    public void Save()
+    {
+        data.money = coins;
+        data.buffLevel = buffLevel;
+        SaveSystem.SaveByJson("GameData.json", data);
     }
 }
