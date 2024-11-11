@@ -9,7 +9,8 @@ public class ShopManagerScript : MonoBehaviour
 {   
     //int[10,5]是一个二维数组
     //物品数量是5,物品性质有10种
-    public int[,] shopItems = new int[5, 6];//物品性质4，物品数量5，不使用index0,以防报错
+    public int[,] shopItems = new int[5, 20];//物品性质4，物品数量19，不使用index0,以防报错
+    public string[] buffName = new string[20];
     public int coins;
     public Text coinsTxt;
 
@@ -18,32 +19,40 @@ public class ShopManagerScript : MonoBehaviour
         coinsTxt.text = coins.ToString();
 
         //物品ID
-        shopItems[1, 1] = 1;
-        shopItems[1, 2] = 2;
-        shopItems[1, 3] = 3;
-        shopItems[1, 4] = 4;
-        shopItems[1, 5] = 5;
+        for(int i = 1; i < 20; i++)
+        {
+            shopItems[1, i] = i;
+        }
 
         //物品价格
-        shopItems[2, 1] = 10;
-        shopItems[2, 2] = 20;
-        shopItems[2, 3] = 30;
-        shopItems[2, 4] = 40;
-        shopItems[2, 5] = 50;
+        for(int i = 1; i < 20; i++)
+        {
+            shopItems[2, i] = 10;
+        }
 
         //物品数量,即等级
-        shopItems[3, 1] = 0;
-        shopItems[3, 2] = 0;
-        shopItems[3, 3] = 0;
-        shopItems[3, 4] = 0;
-        shopItems[3, 5] = 0;
+        for(int i = 1; i < 20; i++)
+        {
+            shopItems[3, i] = 0;
+        }
 
         //物品最大数量，即最高等级，或者最大宠物数量
-        shopItems[4, 1] = 3;
-        shopItems[4, 2] = 3;
-        shopItems[4, 3] = 3;
-        shopItems[4, 4] = 3;
-        shopItems[4, 5] = 3;
+        for(int i = 1; i < 20; i++)
+        {
+            shopItems[4, i] = 3;
+        }
+
+        //物品名称
+        buffName[1] = "子弹速度";   // buff0
+        buffName[2] = "子弹射速";   // buff1
+        buffName[3] = "子弹耐久";   // buff2
+        buffName[4] = "子弹数量";   // buff3
+        buffName[5] = "初始血量";   // buff4
+        buffName[6] = "血量倍增";   // buff5
+        buffName[7] = "横向速度";   // buff6
+        buffName[8] = "子弹伤害";   // buff7
+        buffName[11] = "撞击免伤";  // buff10
+
     }
 
     public void Buy()
