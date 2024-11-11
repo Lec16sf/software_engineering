@@ -8537,7 +8537,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-<<<<<<< HEAD
     - target: {fileID: 795298631050960114, guid: 9c55896c636ea8b468673545aadcd05d, type: 3}
       propertyPath: health
       value: 100
@@ -8555,9 +8554,6 @@ PrefabInstance:
       value: Soldier
       objectReference: {fileID: 0}
     - target: {fileID: 8906130035686416531, guid: 9c55896c636ea8b468673545aadcd05d, type: 3}
-=======
-    - target: {fileID: 2885249214475375099, guid: 9c55896c636ea8b468673545aadcd05d, type: 3}
->>>>>>> 02ca33ae1513059409c9f34e6d7fc6b262141cea
       propertyPath: m_LocalPosition.x
       value: 3300
       objectReference: {fileID: 0}
