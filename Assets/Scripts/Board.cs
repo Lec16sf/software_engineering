@@ -32,8 +32,8 @@ public class Board : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("trigger");
-            Debug.Log(other.transform.position.x - transform.position.x);
+            //Debug.Log("trigger");
+            //Debug.Log(other.transform.position.x - transform.position.x);
         }
         if (other.CompareTag("Player") && (Mathf.Abs(other.transform.position.x - transform.position.x) < 4.8f))
         {

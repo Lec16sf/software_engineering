@@ -11,7 +11,6 @@ namespace Weapon
         public float activationDistance = 30f;
         public Quaternion rotation = Quaternion.identity;
         public bool isShooting = false;
-        private Vector3 tempPos = new Vector3();
         public Coroutine shootingCoroutine = null;
 
         public Rigidbody rb;
@@ -52,9 +51,10 @@ namespace Weapon
             }
             while (player.health > 0)
             {
-                fire = Instantiate(firePrefab, transform.position + new Vector3(0f, 0f, 0f), rotation);
-                yield return new WaitForSeconds(0.8f);
+                fire = Instantiate(firePrefab, transform.position + new Vector3(0f, 0f, -5f), rotation);
+                yield return new WaitForSeconds(0.2f);
                 Destroy(fire);
+                yield return new WaitForSeconds(1.5f);
             }
         }
     }
