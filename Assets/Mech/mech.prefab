@@ -728,6 +728,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8636936207751146529}
+  - component: {fileID: 4525995069643110908}
+  - component: {fileID: 7960111871050992560}
   m_Layer: 0
   m_Name: BigCanon02Stretcher_R
   m_TagString: Untagged
@@ -750,6 +752,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8732087046146062568}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &4525995069643110908
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3442127096407132738}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &7960111871050992560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3442127096407132738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1ab72d65529a1f47b587cabdebcce09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.0001
+  frequency: 1
+  activationDistance: 30
+  rotation: {x: 0, y: 0, z: 0, w: 1}
+  isShooting: 0
+  rb: {fileID: 4525995069643110908}
+  firePrefab: {fileID: 100000, guid: d83b32097e5cdca4ba18b512a97edab6, type: 3}
+  fire: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &3653853388893024230
 GameObject:
   m_ObjectHideFlags: 0
@@ -1034,6 +1084,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4724825696770438633}
+  - component: {fileID: 3442248402720971133}
+  - component: {fileID: 6199966982375167043}
   m_Layer: 0
   m_Name: BigCanon01Stretcher_L
   m_TagString: Untagged
@@ -1056,6 +1108,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8732087046146062568}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &3442248402720971133
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4530346206768914826}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &6199966982375167043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4530346206768914826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1ab72d65529a1f47b587cabdebcce09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.0001
+  frequency: 1
+  activationDistance: 30
+  rotation: {x: 0, y: 0, z: 0, w: 1}
+  isShooting: 0
+  rb: {fileID: 3442248402720971133}
+  firePrefab: {fileID: 100000, guid: d83b32097e5cdca4ba18b512a97edab6, type: 3}
+  fire: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &4621515896275755614
 GameObject:
   m_ObjectHideFlags: 0
@@ -1402,6 +1502,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7038685341488876513}
+  - component: {fileID: 393096838369826289}
+  - component: {fileID: 651687220991884143}
   m_Layer: 0
   m_Name: BigCanon02Stretcher_L
   m_TagString: Untagged
@@ -1424,6 +1526,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8732087046146062568}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &393096838369826289
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6016428334500191644}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &651687220991884143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6016428334500191644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1ab72d65529a1f47b587cabdebcce09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.0001
+  frequency: 1
+  activationDistance: 30
+  rotation: {x: 0, y: 0, z: 0, w: 1}
+  isShooting: 0
+  rb: {fileID: 393096838369826289}
+  firePrefab: {fileID: 100000, guid: d83b32097e5cdca4ba18b512a97edab6, type: 3}
+  fire: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &6097259243116871317
 GameObject:
   m_ObjectHideFlags: 0
@@ -1727,6 +1877,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2095181871140009593}
+  - component: {fileID: 2795093478438666784}
+  - component: {fileID: 3132526743481256985}
   m_Layer: 0
   m_Name: BigCanon01Stretcher_R
   m_TagString: Untagged
@@ -1749,6 +1901,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8732087046146062568}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &2795093478438666784
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7463799386780459830}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &3132526743481256985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7463799386780459830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1ab72d65529a1f47b587cabdebcce09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.0001
+  frequency: 1
+  activationDistance: 30
+  rotation: {x: 0, y: 0, z: 0, w: 1}
+  isShooting: 0
+  rb: {fileID: 2795093478438666784}
+  firePrefab: {fileID: 100000, guid: d83b32097e5cdca4ba18b512a97edab6, type: 3}
+  fire: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &7665726660607727089
 GameObject:
   m_ObjectHideFlags: 0
