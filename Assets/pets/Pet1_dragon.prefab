@@ -1320,7 +1320,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1484058393081176210}
   - component: {fileID: 6455740652685674775}
-  - component: {fileID: 6589117390859072970}
+  - component: {fileID: 1512785352666464212}
   m_Layer: 0
   m_Name: Pet1_dragon
   m_TagString: Untagged
@@ -1336,7 +1336,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5889267320979916260}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.3798828, y: 0, z: 0.5}
   m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_ConstrainProportionsScale: 0
@@ -1366,7 +1366,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6589117390859072970
+--- !u!114 &1512785352666464212
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

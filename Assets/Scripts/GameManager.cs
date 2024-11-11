@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using TMPro;
 
 public class GameManager : MonoBehaviour
@@ -157,6 +158,24 @@ public class GameManager : MonoBehaviour
                     textComponent.text = BuffText[ChextBuffIndexs[i]];
                 }
             }
+            Image[] imageComponents = child.GetComponentsInChildren<Image>();
+            foreach (Image imageComponent in imageComponents)
+            {
+                if (imageComponent != null && imageComponent.transform.parent == child)
+                {
+                    string spritePath = "BuffIcons/" + ChextBuffIndexs[i];
+                    Debug.Log("Attempting to load sprite from path: " + spritePath);
+                    Sprite newSprite = Resources.Load<Sprite>(spritePath);
+                    if (newSprite != null)
+                    {
+                        imageComponent.sprite = newSprite;
+                    }
+                    else
+                    {
+                        Debug.LogError("Failed to load sprite: " + spritePath);
+                    }
+                }
+            }
             i++;
         }
         PauseMenu.GameIsPaused = true;
@@ -165,7 +184,7 @@ public class GameManager : MonoBehaviour
 
     public int getBuffNum()
     {
-        int randomNum = random.Next(1, buffNum);
+        int randomNum = random.Next(0, buffNum);
         if(randomNum == 3 && buffLevel[3] > 2){
             return getBuffNum();
         }

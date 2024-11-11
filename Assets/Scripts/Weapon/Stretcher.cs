@@ -11,7 +11,6 @@ namespace Weapon
         public float activationDistance = 30f;
         public Quaternion rotation = Quaternion.identity;
         public bool isShooting = false;
-        private Vector3 tempPos = new Vector3();
         public Coroutine shootingCoroutine = null;
 
         public Rigidbody rb;
