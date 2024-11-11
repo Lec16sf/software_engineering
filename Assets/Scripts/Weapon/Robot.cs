@@ -90,51 +90,51 @@ namespace Weapon
         
         public void ShootMethod1()
         {
-            Instantiate(firePrefab, transform.position + new Vector3(-5.5f, 1.5f, -3.791f), rotation);
-            Instantiate(firePrefab, transform.position + new Vector3(5.5f, 1.5f, -3.791f), rotation);
+            Instantiate(firePrefab, transform.position + new Vector3(-5.5f, 1.2f, -3.791f), rotation);
+            Instantiate(firePrefab, transform.position + new Vector3(5.5f, 1.2f, -3.791f), rotation);
         }
 
         public void ShootMethod2()
         {
-            Instantiate(firePrefab, transform.position + new Vector3(0f, 1.5f, -3.791f), rotation);
+            Instantiate(firePrefab, transform.position + new Vector3(0f, 1.2f, -3.791f), rotation);
         }
 
         public void ShootMethod3()
         {
-            Instantiate(firePrefab, transform.position + new Vector3(0f, 1.5f, -3.791f), rotation);
-            Instantiate(firePrefab, transform.position + new Vector3(5.5f, 1.5f, -3.791f), rotation);
+            Instantiate(firePrefab, transform.position + new Vector3(0f, 1.2f, -3.791f), rotation);
+            Instantiate(firePrefab, transform.position + new Vector3(5.5f, 1.2f, -3.791f), rotation);
         }
 
         public void ShootMethod4()
         {
-            Instantiate(firePrefab, transform.position + new Vector3(0f, 1.5f, -3.791f), rotation);
-            Instantiate(firePrefab, transform.position + new Vector3(-5.5f, 1.5f, -3.791f), rotation);
+            Instantiate(firePrefab, transform.position + new Vector3(0f, 1.2f, -3.791f), rotation);
+            Instantiate(firePrefab, transform.position + new Vector3(-5.5f, 1.2f, -3.791f), rotation);
         }
 
         public void ShootMethod5()
         {
             bulletNum = Random.Range(1, 7);
-            Instantiate(bulletPrefab, transform.position + new Vector3(0f, 1.5f, -3.791f), rotation * Quaternion.Euler(0f, 0f, 0f));
+            Instantiate(bulletPrefab, transform.position + new Vector3(0f, 1.2f, -3.791f), rotation * Quaternion.Euler(0f, 0f, 0f));
 
             if(bulletNum >= 3)
             {
-                Instantiate(bulletPrefab, transform.position + new Vector3(0.25f, 1.5f, -3.791f), rotation * Quaternion.Euler(0f, -7.5f, 0f));
+                Instantiate(bulletPrefab, transform.position + new Vector3(0.25f, 1.2f, -3.791f), rotation * Quaternion.Euler(0f, -7.5f, 0f));
 
-                Instantiate(bulletPrefab, transform.position + new Vector3(-0.25f, 1.5f, -3.791f), rotation * Quaternion.Euler(0f, 7.5f, 0f));
+                Instantiate(bulletPrefab, transform.position + new Vector3(-0.25f, 1.2f, -3.791f), rotation * Quaternion.Euler(0f, 7.5f, 0f));
             }
 
             if(bulletNum >= 5)
             {
-                Instantiate(bulletPrefab, transform.position + new Vector3(1f, 1.5f, -3.791f), rotation * Quaternion.Euler(0f, -30f, 0f));
+                Instantiate(bulletPrefab, transform.position + new Vector3(1f, 1.2f, -3.791f), rotation * Quaternion.Euler(0f, -30f, 0f));
 
-                Instantiate(bulletPrefab, transform.position + new Vector3(-1f, 1.5f, -3.791f), rotation * Quaternion.Euler(0f, 30f, 0f));
+                Instantiate(bulletPrefab, transform.position + new Vector3(-1f, 1.2f, -3.791f), rotation * Quaternion.Euler(0f, 30f, 0f));
             }
 
             if(bulletNum >= 7)
             {
-                Instantiate(bulletPrefab, transform.position + new Vector3(0.5f, 1.5f, -3.791f), rotation * Quaternion.Euler(0f, -15f, 0f));
+                Instantiate(bulletPrefab, transform.position + new Vector3(0.5f, 1.2f, -3.791f), rotation * Quaternion.Euler(0f, -15f, 0f));
 
-                Instantiate(bulletPrefab, transform.position + new Vector3(-0.5f, 1.5f, -3.791f), rotation * Quaternion.Euler(0f, 15f, 0f));
+                Instantiate(bulletPrefab, transform.position + new Vector3(-0.5f, 1.2f, -3.791f), rotation * Quaternion.Euler(0f, 15f, 0f));
             }
         }
 
@@ -142,24 +142,24 @@ namespace Weapon
         {
                
             if(Random.Range(0f, 1f) < 0.6f)
-                Instantiate(bulletPrefab, transform.position + new Vector3(0f, 1.5f, -3.791f), rotation * Quaternion.Euler(0f, 0f, 0f));
+                Instantiate(bulletPrefab, transform.position + new Vector3(0f, 1.2f, -3.791f), rotation * Quaternion.Euler(0f, 0f, 0f));
 
             if(Random.Range(0f, 1f) < 0.6f)
-                Instantiate(bulletPrefab, transform.position + new Vector3(0.25f, 1.5f, -3.791f), rotation * Quaternion.Euler(0f, -7.5f, 0f));
+                Instantiate(bulletPrefab, transform.position + new Vector3(0.25f, 1.2f, -3.791f), rotation * Quaternion.Euler(0f, -7.5f, 0f));
             if(Random.Range(0f, 1f) < 0.6f)
-                Instantiate(bulletPrefab, transform.position + new Vector3(-0.25f, 1.5f, -3.791f), rotation * Quaternion.Euler(0f, 7.5f, 0f));
+                Instantiate(bulletPrefab, transform.position + new Vector3(-0.25f, 1.2f, -3.791f), rotation * Quaternion.Euler(0f, 7.5f, 0f));
 
             if(Random.Range(0f, 1f) < 0.6f)
-                Instantiate(bulletPrefab, transform.position + new Vector3(1f, 1.5f, -3.791f), rotation * Quaternion.Euler(0f, -30f, 0f));
+                Instantiate(bulletPrefab, transform.position + new Vector3(1f, 1.2f, -3.791f), rotation * Quaternion.Euler(0f, -30f, 0f));
 
             if(Random.Range(0f, 1f) < 0.6f)
-                Instantiate(bulletPrefab, transform.position + new Vector3(-1f, 1.5f, -3.791f), rotation * Quaternion.Euler(0f, 30f, 0f));
+                Instantiate(bulletPrefab, transform.position + new Vector3(-1f, 1.2f, -3.791f), rotation * Quaternion.Euler(0f, 30f, 0f));
 
             if(Random.Range(0f, 1f) < 0.6f)
-                Instantiate(bulletPrefab, transform.position + new Vector3(0.5f, 1.5f, -3.791f), rotation * Quaternion.Euler(0f, -15f, 0f));
+                Instantiate(bulletPrefab, transform.position + new Vector3(0.5f, 1.2f, -3.791f), rotation * Quaternion.Euler(0f, -15f, 0f));
 
             if(Random.Range(0f, 1f) < 0.6f)
-                Instantiate(bulletPrefab, transform.position + new Vector3(-0.5f, 1.5f, -3.791f), rotation * Quaternion.Euler(0f, 15f, 0f));
+                Instantiate(bulletPrefab, transform.position + new Vector3(-0.5f, 1.2f, -3.791f), rotation * Quaternion.Euler(0f, 15f, 0f));
         }
         public void Start()
         {

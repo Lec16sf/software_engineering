@@ -51,9 +51,10 @@ namespace Weapon
             }
             while (player.health > 0)
             {
-                fire = Instantiate(firePrefab, transform.position + new Vector3(0f, 0f, 0f), rotation);
-                yield return new WaitForSeconds(0.8f);
+                fire = Instantiate(firePrefab, transform.position + new Vector3(0f, 0f, -5f), rotation);
+                yield return new WaitForSeconds(0.2f);
                 Destroy(fire);
+                yield return new WaitForSeconds(1.5f);
             }
         }
     }
